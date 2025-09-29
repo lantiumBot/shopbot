@@ -1,0 +1,39 @@
+{
+  "name": "lanshop_old",
+  "version": "1.1.0",
+  "description": "Bot général pour Lanshop",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Yubikey",
+  "license": "WTFPL",
+  "dependencies": {
+    "@discordjs/voice": "^0.18.0",
+    "axios": "^1.7.8",
+    "bcrypt": "^5.1.1",
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0",
+    "crypto-price": "^0.0.6",
+    "currency-converter-lt": "^2.0.1",
+    "dayjs": "^1.11.13",
+    "discord.js": "^14.16.3",
+    "discord.js-selfbot-v13": "^3.4.6",
+    "dotenv": "^16.4.7",
+    "glob": "^8.0.3",
+    "googleapis": "^150.0.1",
+    "mongoose": "^8.9.1",
+    "ms": "^2.1.3",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "node-schedule": "^2.1.1",
+    "nodemon": "^3.1.7",
+    "playwright": "^1.52.0",
+    "pm2": "^5.4.3",
+    "puppeteer": "^24.6.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "systeminformation": "^5.25.11",
+    "tesseract.js": "^5.1.1"
+  }
+}

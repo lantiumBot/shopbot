@@ -1,0 +1,9 @@
+node_modules/
+.env
+package-lock.json
+.vscode
+credentials.json
+dev/
+dump/
+temp_files/
+test futur projet/

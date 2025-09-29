@@ -1,0 +1,16 @@
+module.exports = {
+    Guild: require('./guild'),
+    lockedChannel: require('./lockedChannel'),
+    Blacklist: require('./blacklist'),
+    Stock: require('./stock'),
+    Ticket: require('./ticket'),
+    Rep: require('./rep'),
+    Sale: require('./sale'),
+    Leaderboard: require('./leaderboard'),
+    DeletedMessage: require('./DeletedMessage'),
+    Item: require('./item'),
+    ScrapAccount: require('./scrapAccount'),
+    ScrapNitro: require('./scrapNitro'),
+    TicketSettings: require('./ticketsettings'),
+    Exchange: require('./exchange'),
+};

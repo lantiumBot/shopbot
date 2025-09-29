@@ -1,0 +1,25 @@
+const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
+const Logger = require('../../utils/Logger');
+const getLogChannel = require('../../utils/getLogChannel'); // Ajuste le chemin selon la structure de ton projet
+
+module.exports = {
+  name: "",
+  category: "",
+  permissions: [''],
+  usage: "",
+  examples: [""],
+  description: "",
+  options: [
+    {
+      name: "command",
+      description: "taper le nom de votre commande",
+      type: ApplicationCommandOptionType.String,
+      required: false,
+    },
+  ],
+  async runInteraction(client, interaction) {
+   
+      const logChannel = await getLogChannel(guild, 'decoVoc');
+
+  },
+};

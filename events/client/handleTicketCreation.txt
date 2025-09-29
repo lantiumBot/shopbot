@@ -1,0 +1,108 @@
+// Fonction pour gérer la création des tickets
+
+//await handleTicketCreation(client, interaction, customId)
+
+// async function handleTicketCreation(client, interaction, customId) {
+//   const categoryId = "1324022961950298226"; // ID de la catégorie des tickets
+//   const ticketTypeMap = {
+//     open_ticket_youss: { type: "Youss", ping: "<@1071705926412812339>" },
+//     open_ticket_iron: { type: "Iron", ping: "<@908428704089276466>" },
+//     open_ticket_sorcier: { type: "Sorcier", ping: "<@1201140895777570827>" },
+//   };
+
+//   const ticketInfo = ticketTypeMap[customId];
+//   if (!ticketInfo) {
+//     return interaction.reply({
+//       content: "Type de ticket inconnu.",
+//       ephemeral: true,
+//     });
+//   }
+
+//   const { type: ticketType, ping: vendeurPing } = ticketInfo;
+
+//   const permissionOverwrites = [
+//     {
+//       id: interaction.guild.id,
+//       deny: [PermissionsBitField.Flags.ViewChannel],
+//     },
+//     {
+//       id: interaction.user.id,
+//       allow: [
+//         PermissionsBitField.Flags.ViewChannel,
+//         PermissionsBitField.Flags.SendMessages,
+//         PermissionsBitField.Flags.ReadMessageHistory,
+//       ],
+//     },
+//   ];
+
+//   let ticketChannel;
+//   try {
+//     ticketChannel = await interaction.guild.channels.create({
+//       name: `${ticketType}-${interaction.user.username}`,
+//       type: ChannelType.GuildText,
+//       parent: categoryId,
+//       topic: `Ticket ouvert par ${interaction.user.tag}`,
+//       permissionOverwrites: permissionOverwrites,
+//     });
+//   } catch (error) {
+//     console.error(`[ERROR] Impossible de créer le salon : ${error.message}`);
+//     return interaction.reply({
+//       content:
+//         "Erreur : Impossible de créer le salon. Vérifiez les permissions du bot.",
+//       ephemeral: true,
+//     });
+//   }
+
+//   if (!ticketChannel) {
+//     console.error("[ERROR] Le salon n'a pas été créé.");
+//     return interaction.reply({
+//       content: "Erreur : Le salon du ticket n'a pas pu être créé.",
+//       ephemeral: true,
+//     });
+//   }
+
+//   // Création de l'embed
+//   const embed = new EmbedBuilder()
+//     .setTitle(`🎟️ **Ticket ouvert par ${interaction.user.tag}**`)
+//     .setDescription(
+//       `Merci d'avoir ouvert un ticket, il sera bientôt pris en charge par le vendeur.`
+//     )
+//     .setColor("White")
+//     .setFooter({
+//       text: "Merci de patienter et de fournir toutes les informations nécessaires.",
+//     });
+
+//   try {
+//     await ticketChannel.send({
+//       content: `${vendeurPing} ce ticket t'est attribué !`,
+//       embeds: [embed],
+//       components: [
+//         {
+//           type: 1,
+//           components: [
+//             {
+//               type: 2,
+//               style: 4,
+//               label: "Fermer le Ticket",
+//               customId: "close_ticket",
+//             },
+//           ],
+//         },
+//       ],
+//     });
+
+//     await interaction.reply({
+//       content: `Votre ticket **${ticketType}** a été créé : <#${ticketChannel.id}>`,
+//       ephemeral: true,
+//     });
+//   } catch (error) {
+//     console.error(
+//       `[ERROR] Impossible d'envoyer un message dans le salon : ${error.message}`
+//     );
+//     return interaction.reply({
+//       content:
+//         "Erreur : Le message n'a pas pu être envoyé dans le salon du ticket.",
+//       ephemeral: true,
+//     });
+//   }
+// }
